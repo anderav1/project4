@@ -13,7 +13,7 @@ extension WorkoutListViewController {
         
         model = WorkoutListModel(delegate: self)
         
-        //sortButton.action = #selector(showAlert)
+        sortButton.action = #selector(buttonClicked)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -23,10 +23,6 @@ extension WorkoutListViewController {
             creationViewController.setup(model: workoutCreationModel)
         }
     }
-    
-    #warning("TODO: Utilize WorkoutListModel sorting functions to sort the workout list")
-    // sortList(by:)
-    
 }
 
 extension WorkoutListViewController: UITableViewDataSource {
@@ -62,8 +58,8 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
 
 #warning("TODO: Implement UIAlertController functionality for sort picker")
 extension WorkoutListViewController {
-    @objc func showAlert(_ sender: AnyObject) {
-        let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .actionSheet)
+    @objc func buttonClicked(sender: UIBarButtonItem) {
+        let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .alert)
         
         // set up sorting actions
         var sortAlertButtons = [UIAlertAction]()
@@ -78,15 +74,12 @@ extension WorkoutListViewController {
         }
         
         // add cancel action
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            // close the alert controller
-            sortAlertController.dismiss(animated: true, completion: nil)
-        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
         sortAlertController.addAction(cancelButton)
         
-        sortAlertController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
+        /*sortAlertController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         sortAlertController.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-        sortAlertController.isModalInPopover = true
+        sortAlertController.isModalInPopover = true*/
         
         // display the alert controller
         self.present(sortAlertController, animated: true, completion: nil)
