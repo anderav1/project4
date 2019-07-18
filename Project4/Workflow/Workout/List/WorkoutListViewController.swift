@@ -2,11 +2,9 @@ import UIKit
 
 final class WorkoutListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var sortPicker: UIPickerView!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
     
     private var model: WorkoutListModel!
-    
-    let sortModes = ["Sort by...", "Date (descending)", "Date (ascending)", "Calories (descending)", "Duration (descending)"]
 }
 
 extension WorkoutListViewController {
@@ -14,8 +12,8 @@ extension WorkoutListViewController {
         super.viewDidLoad()
         
         model = WorkoutListModel(delegate: self)
-        sortPicker.dataSource = self
-        sortPicker.delegate = self
+        
+        //sortButton.action = #selector(showAlert)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,30 +60,35 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
     }
 }
 
-#warning("TODO: Implement UIPickerView functionality for sort picker")
-extension WorkoutListViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sortModes.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sortModes[row]
-    }
-    
-    #warning("TODO: After user changes sort mode, table view should refresh to reflect the new mode")
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let sortSelection: String = sortModes[row]
-        SortBy.allCases.forEach {
-            if $0.rawValue == sortSelection {
-                model.sortList(by: $0)
-                tableView.reloadData()
+#warning("TODO: Implement UIAlertController functionality for sort picker")
+extension WorkoutListViewController {
+    @objc func showAlert(_ sender: AnyObject) {
+        let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .actionSheet)
+        
+        // set up sorting actions
+        var sortAlertButtons = [UIAlertAction]()
+        for index in 0...3 {
+            if let sortMode = SortBy.init(rawValue: index) {
+                sortAlertButtons[index] = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
+                    self.model.sortList(by: sortMode)
+                    self.dataRefreshed()
+                }
+                sortAlertController.addAction(sortAlertButtons[0])
             }
         }
+        
+        // add cancel action
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            // close the alert controller
+            sortAlertController.dismiss(animated: true, completion: nil)
+        }
+        sortAlertController.addAction(cancelButton)
+        
+        sortAlertController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
+        sortAlertController.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+        sortAlertController.isModalInPopover = true
+        
+        // display the alert controller
+        self.present(sortAlertController, animated: true, completion: nil)
     }
 }

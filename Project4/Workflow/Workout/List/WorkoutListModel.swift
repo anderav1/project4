@@ -32,12 +32,18 @@ extension WorkoutListModel {
 }
 
 #warning("TODO: Implement sorting functionality for workout list")
-enum SortBy: String, CaseIterable {
-    case dateDescending = "Date (descending)"
-    case dateAscending = "Date (ascending)"
-    case caloriesDescending = "Calories (descending)"
-    case durationDescending = "Duration (descending)"
-    case defaultOrder = "Sort by..."
+enum SortBy: Int, CaseIterable {
+    case dateDescending = 0, dateAscending, caloriesDescending, durationDescending, defaultOrder
+    
+    var name: String {
+        switch self {
+        case .dateDescending: return "Date (descending)"
+        case .dateAscending: return "Date (ascending)"
+        case .caloriesDescending: return "Calories (descending)"
+        case .durationDescending: return "Duration (descending)"
+        case .defaultOrder: return "Sort by..."
+        }
+    }
 }
 
 extension WorkoutListModel {
