@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-5U-bcP" userLabel="Sort Picker View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="lpu-0g-uNI"/>
-                                </constraints>
-                            </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-ow-IeH">
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,13 +92,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="X7T-5U-bcP" firstAttribute="top" secondItem="hpx-M9-rd8" secondAttribute="top" id="3ei-Cs-85P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T1C-ow-IeH" secondAttribute="trailing" id="6jh-WF-CtS"/>
-                            <constraint firstItem="X7T-5U-bcP" firstAttribute="leading" secondItem="hpx-M9-rd8" secondAttribute="leading" id="Mya-it-oxn"/>
                             <constraint firstItem="T1C-ow-IeH" firstAttribute="top" secondItem="hpx-M9-rd8" secondAttribute="top" id="NaP-Rq-Qfh"/>
                             <constraint firstItem="T1C-ow-IeH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QWd-EA-wRl"/>
                             <constraint firstItem="hpx-M9-rd8" firstAttribute="bottom" secondItem="T1C-ow-IeH" secondAttribute="bottom" id="SbO-pW-Dp3"/>
-                            <constraint firstItem="hpx-M9-rd8" firstAttribute="trailing" secondItem="X7T-5U-bcP" secondAttribute="trailing" id="r28-pJ-LeO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hpx-M9-rd8"/>
                     </view>
@@ -117,7 +108,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sortPicker" destination="X7T-5U-bcP" id="bt1-yI-3j2"/>
                         <outlet property="tableView" destination="T1C-ow-IeH" id="wgc-oK-Udg"/>
                     </connections>
                 </viewController>
