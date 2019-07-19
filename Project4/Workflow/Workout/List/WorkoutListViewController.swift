@@ -13,14 +13,13 @@ extension WorkoutListViewController {
         
         model = WorkoutListModel(delegate: self)
         
-        sortButton.action = #selector(buttonClicked(sender:))
+        sortButton.action = #selector(buttonClicked)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let creationViewController = segue.destination as? WorkoutCreationViewController {
             let workout: Workout = sender as? Workout ?? .defaultWorkout
-            
-            #warning("Need to finish implementing isEditing logic")
+           
             var workoutDoesExist: Bool
             if sender is Workout {
                 workoutDoesExist = true
@@ -79,7 +78,7 @@ extension WorkoutListViewController {
 
 #warning("TODO: Implement UIAlertController functionality for sort button")
 extension WorkoutListViewController {
-    @objc func buttonClicked(sender: UIBarButtonItem) {
+    @objc func buttonClicked() {
         let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .alert)
         
         // set up sorting actions

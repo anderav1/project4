@@ -45,7 +45,6 @@ extension WorkoutCreationViewController {
         caloriesLabel.text = "\(model.workout.caloriesPerMin)"
         
         addWorkoutButton.setTitle(model.buttonText, for: .normal)
-        #warning("change navigation bar title")
         navigationItem.title = model.titleText
     }
 }
