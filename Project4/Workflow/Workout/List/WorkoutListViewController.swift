@@ -13,7 +13,7 @@ extension WorkoutListViewController {
         
         model = WorkoutListModel(delegate: self)
         
-        sortButton.action = #selector(buttonClicked)
+        sortButton.action = #selector(buttonClicked(sender:))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,9 +54,22 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
     func dataRefreshed() {
         tableView.reloadData()
     }
+    
+    func clearList() {
+        model.clear()
+        self.dataRefreshed()
+    }
 }
 
-#warning("TODO: Implement UIAlertController functionality for sort picker")
+extension WorkoutListViewController {
+    @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
+        #warning("TODO: Trigger alert that confirms that all workouts will be deleted")
+        
+        self.clearList()
+    }
+}
+
+#warning("TODO: Implement UIAlertController functionality for sort button")
 extension WorkoutListViewController {
     @objc func buttonClicked(sender: UIBarButtonItem) {
         let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .alert)

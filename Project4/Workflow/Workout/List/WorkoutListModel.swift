@@ -3,6 +3,7 @@ import struct UIKit.CGFloat
 
 protocol WorkoutListModelDelegate: class {
     func dataRefreshed()
+    func clearList()
 }
 
 final class WorkoutListModel {
@@ -63,5 +64,12 @@ extension WorkoutListModel: WorkoutCreationModelDelegate {
         workouts.append(workout)
         persistence?.save(workout: workout)
         delegate?.dataRefreshed()
+    }
+}
+
+extension WorkoutListModel {
+    // deletes all workouts in the list
+    func clear() {
+        workouts = []
     }
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuq-Hj-FSz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,25 +15,25 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="WorkoutListViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-ow-IeH">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkoutCell" rowHeight="64" id="X6q-3H-OSK" customClass="WorkoutListTableViewCell" customModule="Project4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="64"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6q-3H-OSK" id="Q2V-gf-eRL">
-                                            <rect key="frame" x="0.0" y="0.0" width="527" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-lo-iXT" userLabel="Cell Stack View">
-                                                    <rect key="frame" x="15" y="11" width="287" height="42"/>
+                                                    <rect key="frame" x="15" y="11" width="318" height="42"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dHQ-4h-fM9" userLabel="Left Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="143.5" height="42"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIt-xm-5Oa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="18.5"/>
@@ -46,16 +50,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WbD-to-xMt" userLabel="Right Stack View">
-                                                            <rect key="frame" x="143.5" y="0.0" width="143.5" height="42"/>
+                                                            <rect key="frame" x="159" y="0.0" width="159" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cp-3S-QGy">
-                                                                    <rect key="frame" x="107.5" y="0.0" width="36" height="18.5"/>
+                                                                    <rect key="frame" x="123" y="0.0" width="36" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-tR-CEO" userLabel="Total Calories Label">
-                                                                    <rect key="frame" x="40" y="23.5" width="103.5" height="18.5"/>
+                                                                    <rect key="frame" x="55.5" y="23.5" width="103.5" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -101,11 +105,18 @@
                                 <action selector="buttonClicked:" destination="BYZ-38-t0r" id="h9M-CO-yP9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z5F-PG-zuh">
-                            <connections>
-                                <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutCreation" id="XVI-Df-1Ek"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Z5F-PG-zuh">
+                                <connections>
+                                    <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutCreation" id="XVI-Df-1Ek"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="S0J-nW-HyS">
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" id="T8q-Ad-dBT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="sortButton" destination="FRB-KC-V0a" id="kRD-kK-v2i"/>
