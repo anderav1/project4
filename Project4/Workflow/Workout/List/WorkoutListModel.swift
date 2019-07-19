@@ -70,6 +70,7 @@ extension WorkoutListModel: WorkoutCreationModelDelegate {
 extension WorkoutListModel {
     // deletes all workouts in the list
     func clear() {
+        #warning("Delete files from device with persistence")
         workouts = []
     }
 }

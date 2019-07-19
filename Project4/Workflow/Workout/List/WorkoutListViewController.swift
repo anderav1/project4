@@ -19,7 +19,16 @@ extension WorkoutListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let creationViewController = segue.destination as? WorkoutCreationViewController {
             let workout: Workout = sender as? Workout ?? .defaultWorkout
-            let workoutCreationModel = WorkoutCreationModel(workout: workout, delegate: model)
+            
+            #warning("Need to finish implementing isEditing logic")
+            var workoutDoesExist: Bool
+            if sender is Workout {
+                workoutDoesExist = true
+            } else {
+                workoutDoesExist = false
+            }
+            
+            let workoutCreationModel = WorkoutCreationModel(workout: workout, delegate: model, isEditing: workoutDoesExist)
             creationViewController.setup(model: workoutCreationModel)
         }
     }

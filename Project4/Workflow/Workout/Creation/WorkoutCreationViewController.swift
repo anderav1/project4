@@ -5,8 +5,6 @@ final class WorkoutCreationViewController: UIViewController {
     @IBOutlet private weak var dateField: UITextField!
     @IBOutlet private weak var minutesLabel: UILabel!
     @IBOutlet private weak var minutesStepper: UIStepper!
-    
-    #warning("TODO: Delete intensity functionality and implement calorie stepper functionality")
     @IBOutlet private weak var caloriesStepper: UIStepper!
     @IBOutlet private weak var caloriesLabel: UILabel!
     
@@ -40,7 +38,6 @@ extension WorkoutCreationViewController {
         minutesStepper.value = Double(model.workout.duration)
         minutesLabel.text = "\(model.workout.duration)"
         
-        #warning("TODO: configure calories/min stepper functionality")
         // Configure calories stepper and label
         caloriesStepper.minimumValue = model.minCalorieBurnRate
         caloriesStepper.maximumValue = model.maxCalorieBurnRate
@@ -60,7 +57,7 @@ extension WorkoutCreationViewController {
         minutesLabel.text = "\(Int(sender.value))"
     }
     
-    #warning("TODO: add caloriesValueChanged() function")
+
     @IBAction private func caloriesValueChanged(_ sender: UIStepper) {
         caloriesLabel.text = "\(Int(sender.value))"
     }
