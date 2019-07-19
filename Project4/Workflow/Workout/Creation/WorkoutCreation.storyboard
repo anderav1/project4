@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="itG-V3-sRe">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController title="Add a Workout" id="itG-V3-sRe" customClass="WorkoutCreationViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQE-ea-YQA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELl-kw-cYH" userLabel="Main Stack View">
-                                <rect key="frame" x="20.5" y="172.5" width="373" height="193"/>
+                                <rect key="frame" x="19" y="103.5" width="337.5" height="193"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-bN-YRO" userLabel="Name Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-37-lwX">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xE-Lf-KUV">
-                                                <rect key="frame" x="139.5" y="0.0" width="233.5" height="30"/>
+                                                <rect key="frame" x="127.5" y="0.0" width="210" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -42,16 +42,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4BR-l4-kYk" userLabel="Date Stack View">
-                                        <rect key="frame" x="0.0" y="55" width="373" height="30"/>
+                                        <rect key="frame" x="0.0" y="55" width="337.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-36-2J3">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egj-4V-OI0">
-                                                <rect key="frame" x="139.5" y="0.0" width="233.5" height="30"/>
+                                                <rect key="frame" x="127.5" y="0.0" width="210" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -62,16 +62,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-ov-VYY" userLabel="Duration Stack View">
-                                        <rect key="frame" x="0.0" y="110" width="373" height="29"/>
+                                        <rect key="frame" x="0.0" y="110" width="337.5" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVx-hq-hbX">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nJG-le-mfn" userLabel="Minutes Stack View">
-                                                <rect key="frame" x="153.5" y="0.0" width="81.5" height="29"/>
+                                                <rect key="frame" x="132.5" y="0.0" width="81.5" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVr-tt-YgB">
                                                         <rect key="frame" x="0.0" y="0.0" width="10.5" height="29"/>
@@ -88,7 +88,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-nY-vRd">
-                                                <rect key="frame" x="279" y="0.0" width="94" height="29"/>
+                                                <rect key="frame" x="243.5" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="minutesValueChanged:" destination="itG-V3-sRe" eventType="valueChanged" id="Tcm-gu-FRb"/>
                                                 </connections>
@@ -96,16 +96,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="vLL-dt-BRY" userLabel="Calorie Rate Stack View">
-                                        <rect key="frame" x="0.0" y="164" width="373" height="29"/>
+                                        <rect key="frame" x="0.0" y="164" width="337.5" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbN-uZ-Hhn">
-                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-5J-ZmT" userLabel="Calories/Min Stack View">
-                                                <rect key="frame" x="163" y="0.0" width="76" height="29"/>
+                                                <rect key="frame" x="127.5" y="0.0" width="76" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVA-LU-sSz" userLabel="Calories/Min Label">
                                                         <rect key="frame" x="0.0" y="0.0" width="8" height="29"/>
@@ -122,7 +122,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-qw-yFO" userLabel="Calories Stepper">
-                                                <rect key="frame" x="279" y="0.0" width="94" height="29"/>
+                                                <rect key="frame" x="243.5" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="caloriesValueChanged:" destination="itG-V3-sRe" eventType="valueChanged" id="U1v-Md-TrR"/>
                                                 </connections>
@@ -143,7 +143,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-8i-kvp">
-                                <rect key="frame" x="157" y="415.5" width="100" height="33"/>
+                                <rect key="frame" x="137.5" y="346.5" width="100" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add Workout"/>
                                 <connections>

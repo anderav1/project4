@@ -66,7 +66,6 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
     
     func clearList() {
         model.clear()
-        self.dataRefreshed()
     }
 }
 

@@ -43,6 +43,10 @@ extension WorkoutCreationViewController {
         caloriesStepper.maximumValue = model.maxCalorieBurnRate
         caloriesStepper.value = Double(model.workout.caloriesPerMin)
         caloriesLabel.text = "\(model.workout.caloriesPerMin)"
+        
+        addWorkoutButton.setTitle(model.buttonText, for: .normal)
+        #warning("change navigation bar title")
+        navigationItem.title = model.titleText
     }
 }
 

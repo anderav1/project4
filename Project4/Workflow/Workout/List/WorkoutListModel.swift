@@ -61,7 +61,13 @@ extension WorkoutListModel {
 
 extension WorkoutListModel: WorkoutCreationModelDelegate {
     func save(workout: Workout) {
-        workouts.append(workout)
+        // check for duplicate ids & replace if applicable
+        if let existingWorkoutIndex = workouts.firstIndex(where: { $0.id == workout.id }) {
+            workouts[existingWorkoutIndex] = workout
+        } else {
+            workouts.append(workout)
+        }
+        
         persistence?.save(workout: workout)
         delegate?.dataRefreshed()
     }
@@ -70,7 +76,8 @@ extension WorkoutListModel: WorkoutCreationModelDelegate {
 extension WorkoutListModel {
     // deletes all workouts in the list
     func clear() {
-        #warning("Delete files from device with persistence")
+        persistence?.clearWorkoutList()
         workouts = []
+        delegate?.dataRefreshed()
     }
 }

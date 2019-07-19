@@ -4,10 +4,6 @@ protocol WorkoutCreationModelDelegate: class {
     func save(workout: Workout)
 }
 
-protocol WorkoutModelDisplayDelegate: class {
-    func workoutEntryUpdated()
-}
-
 final class WorkoutCreationModel {
     let minimumStepperValue: Double = 2.0
     let maximumStepperValue: Double = 90.0
@@ -23,12 +19,10 @@ final class WorkoutCreationModel {
     var buttonText: String { return isEditing ? "Update" : "Add"}
     
     private weak var delegate: WorkoutCreationModelDelegate?
-    //private weak var displayDelegate: WorkoutModelDisplayDelegate?
         
-    init(workout: Workout, delegate: WorkoutCreationModelDelegate, /*displayDelegate: WorkoutModelDisplayDelegate,*/ isEditing: Bool) {
+    init(workout: Workout, delegate: WorkoutCreationModelDelegate, isEditing: Bool) {
         self.workout = workout
         self.delegate = delegate
-       // self.displayDelegate = displayDelegate
         self.isEditing = isEditing
     }
 }

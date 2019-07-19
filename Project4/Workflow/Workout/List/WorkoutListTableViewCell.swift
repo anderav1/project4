@@ -4,8 +4,6 @@ final class WorkoutListTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var durationLabel: UILabel!
-    
-    #warning("TODO: Add calories burned label to code & storyboard")
     @IBOutlet private weak var caloriesBurnedLabel: UILabel!
     
     private(set) var workout: Workout!
