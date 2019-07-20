@@ -30,10 +30,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-lo-iXT" userLabel="Cell Stack View">
-                                                    <rect key="frame" x="15" y="11" width="318" height="42"/>
+                                                    <rect key="frame" x="15" y="11" width="287" height="42"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dHQ-4h-fM9" userLabel="Left Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="42"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="143.5" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIt-xm-5Oa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="18.5"/>
@@ -50,16 +50,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WbD-to-xMt" userLabel="Right Stack View">
-                                                            <rect key="frame" x="159" y="0.0" width="159" height="42"/>
+                                                            <rect key="frame" x="143.5" y="0.0" width="143.5" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cp-3S-QGy">
-                                                                    <rect key="frame" x="123" y="0.0" width="36" height="18.5"/>
+                                                                    <rect key="frame" x="107.5" y="0.0" width="36" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-tR-CEO" userLabel="Total Calories Label">
-                                                                    <rect key="frame" x="55.5" y="23.5" width="103.5" height="18.5"/>
+                                                                    <rect key="frame" x="40" y="23.5" width="103.5" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -100,11 +100,6 @@
                         <viewLayoutGuide key="safeArea" id="hpx-M9-rd8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workout List" id="nlc-Pm-zJG">
-                        <barButtonItem key="leftBarButtonItem" title="Sort" id="FRB-KC-V0a">
-                            <connections>
-                                <action selector="buttonClicked:" destination="BYZ-38-t0r" id="h9M-CO-yP9"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Z5F-PG-zuh">
                                 <connections>
@@ -119,7 +114,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="sortButton" destination="FRB-KC-V0a" id="kRD-kK-v2i"/>
                         <outlet property="tableView" destination="T1C-ow-IeH" id="wgc-oK-Udg"/>
                     </connections>
                 </viewController>

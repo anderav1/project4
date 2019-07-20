@@ -2,7 +2,8 @@ import UIKit
 
 final class WorkoutListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var sortButton: UIBarButtonItem!
+    
+    private var sortButton: UIBarButtonItem!
     
     private var model: WorkoutListModel!
 }
@@ -13,7 +14,9 @@ extension WorkoutListViewController {
         
         model = WorkoutListModel(delegate: self)
         
-        sortButton.action = #selector(buttonClicked)
+        // configure sort button
+        sortButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(buttonClicked))
+        navigationItem.leftBarButtonItem = sortButton
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,7 +82,7 @@ extension WorkoutListViewController {
 #warning("TODO: Implement UIAlertController functionality for sort button")
 extension WorkoutListViewController {
     @objc func buttonClicked() {
-        let sortAlertController = UIAlertController(title: "Sort workouts", message: "by:", preferredStyle: .alert)
+        let sortAlertController = UIAlertController(title: "Sort workouts by", message: nil, preferredStyle: .alert)
         
         // set up sorting actions
         var sortAlertButtons = [UIAlertAction]()
@@ -97,9 +100,9 @@ extension WorkoutListViewController {
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
         sortAlertController.addAction(cancelButton)
         
-        /*sortAlertController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
-        sortAlertController.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-        sortAlertController.isModalInPopover = true*/
+        //sortAlertController.popoverPresentationController?.barButtonItem = sortButton
+        //sortAlertController.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+        //sortAlertController.isModalInPopover = true
         
         // display the alert controller
         self.present(sortAlertController, animated: true, completion: nil)
