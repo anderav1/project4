@@ -74,35 +74,35 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
 extension WorkoutListViewController {
     @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
         #warning("TODO: Trigger alert that confirms that all workouts will be deleted")
+        let clearAlert = UIAlertController(title: "Clear workout list", message: "Are you sure you want to delete all workouts?", preferredStyle: .alert)
         
-        self.clearList()
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) -> Void in self.clearList() }
+        let noAction = UIAlertAction(title: "No", style: .cancel)
+        
+        clearAlert.addAction(yesAction)
+        clearAlert.addAction(noAction)
+        
+        self.present(clearAlert, animated: true, completion: nil)
     }
 }
 
-#warning("TODO: Implement UIAlertController functionality for sort button")
 extension WorkoutListViewController {
     @objc func buttonClicked() {
         let sortAlertController = UIAlertController(title: "Sort workouts by", message: nil, preferredStyle: .alert)
         
-        // set up sorting actions
-        var sortAlertButtons = [UIAlertAction]()
+        // set up & add sorting actions
         for index in 0...3 {
             if let sortMode = SortBy.init(rawValue: index) {
-                sortAlertButtons[index] = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
+                let sortAction = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
                     self.model.sortList(by: sortMode)
-                    self.dataRefreshed()
                 }
-                sortAlertController.addAction(sortAlertButtons[0])
+                sortAlertController.addAction(sortAction)
             }
         }
         
         // add cancel action
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
         sortAlertController.addAction(cancelButton)
-        
-        //sortAlertController.popoverPresentationController?.barButtonItem = sortButton
-        //sortAlertController.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-        //sortAlertController.isModalInPopover = true
         
         // display the alert controller
         self.present(sortAlertController, animated: true, completion: nil)

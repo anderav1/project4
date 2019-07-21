@@ -32,7 +32,6 @@ extension WorkoutListModel {
     }
 }
 
-#warning("TODO: Implement sorting functionality for workout list")
 enum SortBy: Int, CaseIterable {
     case dateDescending = 0, dateAscending, caloriesDescending, durationDescending, defaultOrder
     
@@ -56,6 +55,7 @@ extension WorkoutListModel {
         case .durationDescending: workouts.sort(by: { $0.duration > $1.duration })
         case .defaultOrder: return
         }
+        delegate?.dataRefreshed()
     }
 }
 
