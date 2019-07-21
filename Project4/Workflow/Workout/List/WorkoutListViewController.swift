@@ -15,7 +15,7 @@ extension WorkoutListViewController {
         model = WorkoutListModel(delegate: self)
         
         // configure sort button
-        sortButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(buttonClicked))
+        sortButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(sortButtonClicked))
         navigationItem.leftBarButtonItem = sortButton
     }
     
@@ -73,7 +73,6 @@ extension WorkoutListViewController: WorkoutListModelDelegate {
 
 extension WorkoutListViewController {
     @IBAction func clearButtonPressed(_ sender: UIBarButtonItem) {
-        #warning("TODO: Trigger alert that confirms that all workouts will be deleted")
         let clearAlert = UIAlertController(title: "Clear workout list", message: "Are you sure you want to delete all workouts?", preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) -> Void in self.clearList() }
@@ -87,7 +86,7 @@ extension WorkoutListViewController {
 }
 
 extension WorkoutListViewController {
-    @objc func buttonClicked() {
+    @objc func sortButtonClicked() {
         let sortAlertController = UIAlertController(title: "Sort workouts by", message: nil, preferredStyle: .alert)
         
         // set up & add sorting actions

@@ -28,7 +28,6 @@ final class WorkoutPersistence: FileStoragePersistence, WorkoutPersistenceInterf
     }
     
     func clearWorkoutList() {
-        #warning("TODO: delete the workout list from the system")
         for workoutFileName in names {
             removeFile(withName: workoutFileName)
         }
