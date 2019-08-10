@@ -91,8 +91,8 @@ extension WorkoutListViewController {
         
         // set up & add an action for each sort mode
         SortBy.allCases.forEach { sortMode in
-            let sortAction = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
-                self.model.sortList(by: sortMode)
+            let sortAction = UIAlertAction(title: sortMode.name, style: .default) { [weak self] in
+                self?.model.sortList(by: sortMode)
             }
             sortAlertController.addAction(sortAction)
         }
