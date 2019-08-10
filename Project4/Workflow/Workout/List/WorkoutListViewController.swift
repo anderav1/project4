@@ -89,14 +89,12 @@ extension WorkoutListViewController {
     @objc func sortButtonClicked() {
         let sortAlertController = UIAlertController(title: "Sort workouts by", message: nil, preferredStyle: .alert)
         
-        // set up & add sorting actions
-        for index in 0...3 {
-            if let sortMode = SortBy.init(rawValue: index) {
-                let sortAction = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
-                    self.model.sortList(by: sortMode)
-                }
-                sortAlertController.addAction(sortAction)
+        // set up & add an action for each sort mode
+        SortBy.allCases.forEach { sortMode in
+            let sortAction = UIAlertAction(title: sortMode.name, style: .default) { (action) -> Void in
+                self.model.sortList(by: sortMode)
             }
+            sortAlertController.addAction(sortAction)
         }
         
         // add cancel action
